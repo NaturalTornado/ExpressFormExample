@@ -1,0 +1,24 @@
+<!-- views/searchResults.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <ul>
+    <% if (users && users.length > 0) { %>
+      <% users.forEach(user => { %>
+        <li>
+          ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>, Email: <%= user.email %>
+        </li>
+      <% }); %>
+    <% } else { %>
+      <li>No users found matching your criteria.</li>
+    <% } %>
+  </ul>
+
+  <a href="/">Back to home</a>
+</body>
+</html>
